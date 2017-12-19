@@ -1,0 +1,13 @@
+http://ss64.com/nt/syntax-loops.html
+http://stackoverflow.com/questions/8756804/check-a-string-for-a-substring-in-a-batch-file-windows
+http://stackoverflow.com/questions/16619033/understand-how-batch-do-when-there-is-a-goto-command-nested-into-a-for-loop
+https://uk.answers.yahoo.com/question/index?qid=20080526032521AAF7sLQ
+http://stackoverflow.com/questions/23600775/windows-batch-file-split-string-with-string-as-delimiter
+http://stackoverflow.com/questions/1964192/removing-double-quotes-from-variables-in-batch-file-creates-problems-with-cmd-en
+http://stackoverflow.com/questions/988403/how-to-prevent-auto-closing-of-console-after-the-execution-of-batch-file
+http://superuser.com/questions/404737/redirect-pipe-to-a-variable-in-windows-batch-file
+http://stackoverflow.com/questions/14334850/why-this-code-says-echo-is-off
+http://stackoverflow.com/questions/14347038/dos-batch-why-are-my-set-commands-resulting-in-nothing-getting-stored/14347131#14347131
+http://ss64.com/nt/delayedexpansion.html
+http://www.robvanderwoude.com/comments.php
+http://stackoverflow.com/questions/1707058/how-to-split-a-string-in-a-windows-batch-file

@@ -1,0 +1,86 @@
+In a batch file there is a syntax that can be used to replace one value with another in variables. This can be used in lots of ways and I show some of them here. 
+
+The basic syntax is: %string:SEARCH=REPLACE%
+
+1. Replace string "work" with "play"
+
+@echo off
+set string=This is my string to work with.
+set string=%string:work=play%
+echo %string%
+
+Output = This is my string to play with.
+
+2. Remove the string "to work with."
+
+@echo off
+set string=This is my string to work with.
+set string=%string:to work with.=%
+echo %string%
+
+Output = This is my string
+
+3. Replace all spaces with an underscore
+
+@echo off
+set string=This is my string to work with.
+set string=%string: =_%
+echo %string%
+
+Output = This_is_my_string_to_work_with.
+
+4. Remove all spaces
+
+@echo off
+set string=This is my string to work with.
+set string=%string: =_%
+echo %string%
+
+Output = Thisismystringtoworkwith.
+
+5. Replace a string using other existing variables
+
+To replace one substring with another using details in a variable then you need to turn on delayed expansion and use the variation below.
+
+@echo off
+setlocal enabledelayedexpansion
+set string=This is my string to work with.
+set find=my string
+set replace=your replacement
+call set string=%%string:!find!=!replace!%%
+echo %string%
+
+Output = This is your replacement to work with.
+
+6. Find rest of string after one looked for
+
+This looks for the string "my string " and the * before the string to look for means to match any other characters. This whole string is removed leaving the rest of the line.
+
+@echo off
+setlocal enabledelayedexpansion
+set string=This is my string to work with.
+set "find=*my string "
+call set string=%%string:!find!=%%
+echo %string%
+
+Output = to work with.
+
+7. Find the line up to the string searched for
+
+This looks for the string "*my string " and gets the rest of the line into the variable %delete%. It then substitutes the string from %delete% with nothing.
+
+@echo off
+setlocal enabledelayedexpansion
+set string=This is my string to work with.
+set "find=*my string "
+call set delete=%%string:!find!=%%
+call set string=%%string:!delete!=%%
+echo %string%
+
+Output = This is my string
+
+This only works of course if the strings are not going to be found elsewhere in the line, e.g. with the string below removes both "to work with" strings 
+
+set string=This to work with is my string to work with 
+
+Output = This is my string
